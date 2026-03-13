@@ -8,7 +8,10 @@ import numpy as np
 import streamlit as st
 from groq import Groq
 from PyPDF2 import PdfReader
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+try:
+    from langchain_text_splitters import RecursiveCharacterTextSplitter
+except Exception:
+    from langchain.text_splitter import RecursiveCharacterTextSplitter
 
 try:
     from langchain_community.vectorstores import FAISS
